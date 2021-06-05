@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const dviStyle = {
+  color: 'pink'
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div style={dviStyle}>
+      <h2 style={{textAlign: 'center'}}>Hello sexy</h2>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
