@@ -10,7 +10,7 @@ function App() {
 
 
       <Car name={"Mazda"} year={'2022'}>
-        <p style={{color: 'red', fontSize: '2rem', border:'1px solid pink'}}>COLOR</p>
+        <p style={{color: 'red', fontSize: '2rem', border:'1px solid blue'}}>COLOR</p>
       </Car>
       <Car name="Honda" year='2020' /> 
       <Car name="Tesla" year={'2023'} /> 
