@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Car from './Car/Car'
 
 const dviStyle = {
   color: 'pink'
@@ -10,9 +11,12 @@ const dviStyle = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <div style={dviStyle}>
-      <h2 style={{textAlign: 'center'}}>Hello sexy</h2>
-    </div>
+    <App />
+
+
+
+
+      
   </React.StrictMode>,
   document.getElementById('root')
 );
