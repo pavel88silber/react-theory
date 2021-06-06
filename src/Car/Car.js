@@ -15,8 +15,10 @@ export default (props) => (
     <div style={divStyle}>
         <img src={logo} className="App-logo" alt="logo" />
         <hr/>
+        
         <strong>{props.name}</strong>
         <p>year: {props.year}</p>
+
         <button onClick={props.onChangeTitle}>Click!</button>
     </div>  
 )
