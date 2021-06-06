@@ -20,6 +20,12 @@ class App extends Component {
     })
   }
 
+  handleInput = (event) => {
+    this.setState({
+      pageTitle: event.target.value
+    })
+  }
+
   render() {
 
     const divStyle = {
@@ -31,6 +37,8 @@ class App extends Component {
     return (
       <div style={divStyle}>
         <h2>{this.state.pageTitle}</h2>
+
+        <input type='text' onChange={this.handleInput}/>
 
         <button onClick={this.changeTitleHandler.bind(this, 'Changed!')}>Change title</button>
 
