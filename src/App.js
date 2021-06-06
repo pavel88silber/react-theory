@@ -11,7 +11,8 @@ class App extends Component {
       {name: 'Audi', year: '1995'},
       {name: 'Mazda', year: '2010'}
     ],
-    pageTitle: 'React component'
+    pageTitle: 'React component',
+    showCars: true
   }
 
   changeTitleHandler = (newTitle) => {
@@ -20,10 +21,19 @@ class App extends Component {
     })
   }
 
+  // Print in h2 from input 
   handleInput = (event) => {
     this.setState({
       pageTitle: event.target.value
     })
+  }
+
+  // Shows/Hide cars 
+  toggleHandler = () => {
+    this.setState({
+      showCars: !this.state.showCars
+    })
+    
   }
 
   render() {
@@ -39,19 +49,25 @@ class App extends Component {
         <h2>{this.state.pageTitle}</h2>
 
         <input type='text' onChange={this.handleInput}/>
-
+        <br/>
         <button onClick={this.changeTitleHandler.bind(this, 'Changed!')}>Change title</button>
 
-        { this.state.cars.map((car,index) => {
-          return (
-            <Car 
-            key={index}
-            name={car.name} 
-            year={car.year} 
-            onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
-            />
-          )
-        })}
+        <br/>
+        <button onClick={this.toggleHandler}>Show/Hide Cars</button>
+
+        { this.state.showCars
+           ? this.state.cars.map((car,index) => {
+              return (
+                <Car 
+                key={index}
+                name={car.name} 
+                year={car.year} 
+                onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
+                />
+                )
+            })
+            : null
+        } 
 
       </div>
     )
