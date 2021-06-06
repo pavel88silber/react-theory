@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 
 const divStyle = {
     // height : '5rem',
-    color: 'violet',
+    color: 'darkGreen',
     background: '#ccc',
     margin: '1rem',
     borderRadius: '8%',
@@ -17,5 +17,6 @@ export default (props) => (
         <hr/>
         <strong>{props.name}</strong>
         <p>year: {props.year}</p>
+        <button onClick={props.onChangeTitle}>Click!</button>
     </div>  
 )
