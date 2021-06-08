@@ -36,6 +36,25 @@ class App extends Component {
     
   }
 
+  onChangeNameHandler = (name, index) => {
+
+    // Переменая car чтобы сохранить данную машину по индексу
+    const car = this.state.cars[index]
+
+    // Сохраняем новое полученое name в car.name
+    car.name = name
+
+    // Делаем дубликат массива машин cars: [ (из компонента App)
+    // const cars = this.state.cars.concat()   // Можно и так
+    const cars = [...this.state.cars]   // Rest оператор 
+
+    // cars[index] =car    // "Владилен, зачем это?"
+    this.setState({   // Задаем новое состояние
+      cars: cars
+      // cars  // Можно записать так, если ключ и значение совподают
+    })
+  }
+
   render() {
 
     const divStyle = {
@@ -62,7 +81,8 @@ class App extends Component {
                 key={index}
                 name={car.name} 
                 year={car.year} 
-                onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
+                // onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
+                onChangeName={event => this.onChangeNameHandler(event.target.value, index)}
                 />
                 )
             })
