@@ -55,7 +55,19 @@ class App extends Component {
     })
   }
 
-  render() {
+    // Стрелочная функция не создает свой собственный контекст
+    deleteHandler(index) {  
+      // Делаем дубликат массива машин cars:     let потому что хотим удалить из массива (const тоже работат!)
+      const cars = [...this.state.cars]
+      // cars[index].name = 'Deleted Button!' 
+      // УДАЛИТЬ определенный элемент .splice(индекс с какого элемента начать удалять, кол-во элем которое нужно удалить)
+      cars.splice(index, 1)
+      this.setState({
+        cars: cars
+      })
+    }
+
+  render() {                //-------------   RENDER -----------------//
 
     const divStyle = {
       textAlign: 'center'
@@ -82,6 +94,10 @@ class App extends Component {
                 name={car.name} 
                 year={car.year} 
                 // onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
+
+                // Передаем метод onDelete
+                onDelete={this.deleteHandler.bind(this, index)}
+
                 onChangeName={event => this.onChangeNameHandler(event.target.value, index)}
                 />
                 )

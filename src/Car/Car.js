@@ -7,8 +7,8 @@ const divStyle = {
     background: '#ccc',
     margin: '1rem',
     borderRadius: '8%',
-    borderBottom: '3px solid black',
-    borderRight: '3px solid black'
+    borderBottom: '1px solid black',
+    borderRight: '3px solid black',
 }
 
 export default (props) => (
@@ -21,7 +21,7 @@ export default (props) => (
         {/* {Через input передаем в props }.  value={props.name + ' '} By default*/}
         <input type="text" onChange={props.onChangeName} value={props.name + ' '}/> 
 
-        {/* <button onClick={props.onChangeTitle}>Click!</button> */}
+        <button onClick={props.onDelete}>Delete!</button>
     </div>  
 )
 
