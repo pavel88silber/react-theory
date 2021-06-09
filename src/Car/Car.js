@@ -10,10 +10,14 @@ const divStyle = {
     margin: '1rem',
     borderRadius: '8%',
     borderBottom: '1px solid black',
-    borderRight: '3px solid black',
+    borderRight: '1px solid black',
+    ':hover': {
+        border: '1px solid #aaa',
+        boxShadow: '0 4px 15px 0 rgba(0, 0, 0, .25)'
+    }
 }
 
-const car = (props) => {
+const Car = (props) => {
     const inputClasses = ['input']
 
     if (props.name !== '') {
@@ -32,7 +36,7 @@ const car = (props) => {
 
     return (
         <div>
-            <div className={'Car'}>
+            <div className={'Car'} style={divStyle}>
                 <img src={logo} className="App-logo" alt="logo" />
                 <hr/>
                 <strong>{props.name}</strong>
@@ -52,7 +56,7 @@ const car = (props) => {
     )
 }
 
-export default Radium(car)
+export default Radium(Car)
 
 
 
