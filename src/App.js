@@ -89,17 +89,19 @@ class App extends Component {
         { this.state.showCars
            ? this.state.cars.map((car,index) => {
               return (
-                <Car 
-                key={index}
-                name={car.name} 
-                year={car.year} 
-                // onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
 
-                // Передаем метод onDelete
-                onDelete={this.deleteHandler.bind(this, index)}
+                  <Car 
+                  key={index}
+                  name={car.name} 
+                  year={car.year} 
+                  // onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
 
-                onChangeName={event => this.onChangeNameHandler(event.target.value, index)}
-                />
+                  // Передаем метод onDelete
+                  onDelete={this.deleteHandler.bind(this, index)}
+
+                  onChangeName={event => this.onChangeNameHandler(event.target.value, index)}
+                  />
+
                 )
             })
             : null
