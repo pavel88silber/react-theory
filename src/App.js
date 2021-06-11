@@ -77,7 +77,8 @@ class App extends Component {
 
     return (
       <div style={divStyle}>
-        <h2>{this.state.pageTitle}</h2>
+        {/* <h2>{this.state.pageTitle}</h2> */}
+        <h1>{this.props.title}</h1>
 
         <input type='text' onChange={this.handleInput}/>
         <br/>

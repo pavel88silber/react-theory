@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />      
+    <App title={'Hello from props!'}/>      
   </React.StrictMode>,
   document.getElementById('root')
 );
