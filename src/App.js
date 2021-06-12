@@ -5,14 +5,21 @@ import Car from './Car/Car'
 
 class App extends Component {
 
-  state = {
-    cars: [
-      {name: 'Ford', year: '2018'},
-      {name: 'Audi', year: '1995'},
-      {name: 'Mazda', year: '2010'}
-    ],
-    pageTitle: 'React component',
-    showCars: true
+  constructor(props) {
+    super(props) 
+
+    console.log('App constructor')
+
+    this.state = {
+      cars: [
+        {name: 'Ford', year: '2018'},
+        {name: 'Audi', year: '1995'},
+        {name: 'Mazda', year: '2010'}
+      ],
+      pageTitle: 'React component',
+      showCars: true
+    }
+    
   }
 
   changeTitleHandler = (newTitle) => {
@@ -67,7 +74,17 @@ class App extends Component {
       })
     }
 
+    componentWillUnmount() {
+      console.log('componentWillUnmount');
+    }
+
+    componentDidMount() {
+      console.log('componentDidMount');
+    }
+
   render() {                //-------------   RENDER -----------------//
+
+    console.log('App render');
 
     const divStyle = {
       textAlign: 'center'
