@@ -17,44 +17,48 @@ const divStyle = {
     }
 }
 
-const Car = (props) => {
-    const inputClasses = ['input']
+class Car extends React.Component {
+    render() {
+        const inputClasses = ['input']
 
-    if (props.name !== '') {
-        inputClasses.push('green')
-    } else {
-        inputClasses.push('red')
-    }
-
-    if (props.name.length > 4) {
-        inputClasses.push('bold')
-    }
-
-    if (props.name == 't e s t') {
-        inputClasses.push('test')
-    }
-
-    return (
-        <div>
-            <div className={'Car'} style={divStyle}>
-                <img src={logo} className="App-logo" alt="logo" />
-                <hr/>
-                <strong>{props.name}</strong>
-                <p>year: {props.year}</p>
-        
-                {/* {Через input передаем в props }.  value={props.name + ' '} By default*/}
-                <input 
-                    type="text" 
-                    onChange={props.onChangeName} 
-                    value={props.name + ' '}
-                    className={inputClasses.join(' ')}
-                /> 
-        
-                <button onClick={props.onDelete}>Delete!</button>
+        if (this.props.name !== '') {
+            inputClasses.push('green')
+        } else {
+            inputClasses.push('red')
+        }
+    
+        if (this.props.name.length > 4) {
+            inputClasses.push('bold')
+        }
+    
+        if (this.props.name == 't e s t') {
+            inputClasses.push('test')
+        }
+    
+        return (
+            <div>
+                <div className={'Car'} style={divStyle}>
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <hr/>
+                    <strong>{this.props.name}</strong>
+                    <p>year: {this.props.year}</p>
+            
+                    {/* {Через input передаем в props }.  value={props.name + ' '} By default*/}
+                    <input 
+                        type="text" 
+                        onChange={this.props.onChangeName} 
+                        value={this.props.name + ' '}
+                        className={inputClasses.join(' ')}
+                    /> 
+            
+                    <button onClick={this.props.onDelete}>Delete!</button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    
+    }
 }
+
 
 export default Radium(Car)
 
