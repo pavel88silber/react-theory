@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car'
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 
 class App extends Component {
 
@@ -108,17 +109,19 @@ class App extends Component {
            ? this.state.cars.map((car,index) => {
               return (
 
-                  <Car 
-                  key={index}
-                  name={car.name} 
-                  year={car.year} 
-                  // onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
+                  <ErrorBoundary key={index}>
+                    <Car 
+                    
+                    name={car.name} 
+                    year={car.year} 
+                    // onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
 
-                  // Передаем метод onDelete
-                  onDelete={this.deleteHandler.bind(this, index)}
+                    // Передаем метод onDelete
+                    onDelete={this.deleteHandler.bind(this, index)}
 
-                  onChangeName={event => this.onChangeNameHandler(event.target.value, index)}
-                  />
+                    onChangeName={event => this.onChangeNameHandler(event.target.value, index)}
+                    />
+                  </ErrorBoundary>
 
                 )
             })
