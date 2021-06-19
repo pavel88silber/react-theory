@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
+import Counter from './Counter/Counter'
+
 
 class App extends Component {
 
@@ -95,6 +97,9 @@ class App extends Component {
 
     return (
       <div style={divStyle}>
+
+        <Counter />
+
         {/* <h2>{this.state.pageTitle}</h2> */}
         <h1>{this.props.title}</h1>
 

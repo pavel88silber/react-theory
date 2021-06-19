@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../logo.svg';
 import './Car.css'
-import Radium from 'radium'
+// import Radium from 'radium'
 
 const divStyle = {
     // height : '5rem',
@@ -31,7 +31,7 @@ class Car extends React.Component {
             inputClasses.push('bold')
         }
     
-        if (this.props.name == 't e s t') {
+        if (this.props.name === 't e s t') {
             inputClasses.push('test')
         }
     
@@ -60,7 +60,8 @@ class Car extends React.Component {
 }
 
 
-export default Radium(Car)
+// export default Radium(Car)
+export default Car
 
 
 
